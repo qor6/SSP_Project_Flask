@@ -1,8 +1,9 @@
 from flask import Flask
-from neo4j
+from neo4j import GraphDatabase
 
 app = Flask(__name__)
 
+class connectDBMS
 
 @app.route('/')
 def hello_world():  # put application's code here
