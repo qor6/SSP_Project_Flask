@@ -13,21 +13,19 @@ class connectDBMS :
             greeting = session.write_transaction(self.INSERT_USERS_INFORMATION)
             return greeting
 
-    def delete_apple(self):
+    def delete_users(self):
         with self.driver.session() as session:
-            greeting = session.write_transaction(self.APPLY_USERS_INFORMATION)
+            greeting = session.write_transaction(self.INSERT_USERS_INFORMATION)
             return greeting
-
 
     @staticmethod
     def INSERT_USERS_INFORMATION(tx):
         a = tx.run("CREATE (n:user{name : $username, id : $user_id, password : $user_password, nickname:$nickname})", username = "", user_id ="", user_password = "", nickname = "")
-        return '<h1>apple computer is best<h1>'
+        return 'apple computer is best'
 
     @staticmethod
-    def APPLY_USERS_INFORMATION(tx):
-        a = tx.run("MATCH (n:apple_product)"
-                   "DELETE n")
+    def DELETE_USERS_INFORMATION(tx):
+        a = tx.run("MATCH (n:user)""DELETE n")
         return 'apple computer is worst'
 
 greeter = connectDBMS('bolt://localhost:7687','neo4j', '0224')
