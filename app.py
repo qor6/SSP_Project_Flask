@@ -15,16 +15,27 @@ class connectDBMS :
             greeting = session.write_transaction(self.INSERT_USERS_INFORMATION)
             return greeting
 
+    def calendar(self):
+        with self.driver.session() as session:
+            greeting = session.write_transaction(self.INSERT_USERS_CALENDAR)
+            return greeting
+
     def delete_users(self):
         with self.driver.session() as session:
             greeting = session.write_transaction(self.DELETE_USERS_INFORMATION)
             return greeting
 
-    @staticmethod
+    @staticmethod # (n:user:username)
     def INSERT_USERS_INFORMATION(tx):
         a = tx.run("CREATE (n:user{name : $username, id : $user_id, password : $user_password, nickname:$nickname})",
                    username = "", user_id ="", user_password = "", nickname = "")
         return 'add user information success'
+
+    @staticmethod
+    def INSERT_USERS_CALENDAR(tx):
+        a = tx.run("CREATE ()-[:year]->(y:year:2021)-[:month]->()-[:day]->()",
+                   year = "", month = "", day = "")
+        return 'make calendar success'
 
     @staticmethod
     def DELETE_USERS_INFORMATION(tx):
@@ -39,15 +50,19 @@ def home():  # put application's code here
     return 'Hello!!'
 
 @app.route('/user/add') #주소창에 /user/add로 입력하면
-def user_setting():  # put application's code here
+def user_add():  # put application's code here
     a = greeter.insert_users()
+    return a
+
+@app.route('/user/calendar')
+def user_main():  # put application's code here
+    a = greeter.calendar()
     return a
 
 @app.route('/user/delete')
 def user_delete():  # put application's code here
     a = greeter.delete_users()
     return a
-
 
 if __name__ == '__main__':
     app.run(host='localhost', port='5000', debug=True)
