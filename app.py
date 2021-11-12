@@ -38,7 +38,7 @@ greeter = connectDBMS('bolt://localhost:7687','neo4j', '0224')
 def home():  # put application's code here
     return 'Hello!!'
 
-@app.route('/user/create') # 회원가입 페이지
+@app.route('/create') # 회원가입 페이지
 def user_add():
     a = greeter.create_users()
     return a
