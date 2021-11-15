@@ -1,5 +1,5 @@
 # neo4j start 와 open
-# 파이참의 재생 누르면 실행 가능
+# pycharm의 재생 누르면 실행 가능
 from flask import Flask
 from neo4j import GraphDatabase
 # import json
@@ -15,7 +15,7 @@ class connectDBMS :
             greeting = session.write_transaction(self.INSERT_USERS_INFORMATION)
             return greeting
 
-    def delete_users(self):
+    def delete_users(self): #
         with self.driver.session() as session:
             greeting = session.write_transaction(self.DELETE_USERS_INFORMATION)
             return greeting
@@ -28,11 +28,11 @@ class connectDBMS :
 
     @staticmethod
     def DELETE_USERS_INFORMATION(tx):
-        z = tx.run("MATCH (u:user)""DELETE n")
+        z = tx.run("MATCH (u:user)"
+                   "DELETE u")
         return 'delete all user information success'
 
 greeter = connectDBMS('bolt://localhost:7687','neo4j', '0224')
-
 
 @app.route('/') # 기본페이지
 def home():  # put application's code here
