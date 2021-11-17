@@ -1,8 +1,8 @@
 # neo4j start 와 open
 # pycharm의 재생 누르면 실행 가능
-from flask import Flask
+from flask import Flask, jsonify, request, Response
 from neo4j import GraphDatabase
-# import json
+
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ class connectDBMS :
             greeting = session.write_transaction(self.INSERT_USERS_INFORMATION)
             return greeting
 
-    def delete_users(self): #
+    def delete_users(self): # 모든 유저 관련 정보 삭제
         with self.driver.session() as session:
             greeting = session.write_transaction(self.DELETE_USERS_INFORMATION)
             return greeting
@@ -42,6 +42,12 @@ def home():  # put application's code here
 def user_add():
     a = greeter.create_users()
     return a
+
+
+
+
+
+
 
 @app.route('/user/delete') # 모든 유저들 삭제
 def user_delete():
