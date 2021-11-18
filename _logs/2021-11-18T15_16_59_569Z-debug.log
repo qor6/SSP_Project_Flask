@@ -1,0 +1,56 @@
+0 verbose cli [
+0 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+0 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+0 verbose cli   'start'
+0 verbose cli ]
+1 info using npm@8.1.0
+2 info using node@v16.13.0
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:C:\Program Files\nodejs\node_modules\npm\npmrc Completed in 4ms
+6 timing config:load:builtin Completed in 4ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:C:\Users\J-365\anaconda3\envs\SSP_Project_Flask\.npmrc Completed in 1ms
+10 timing config:load:project Completed in 2ms
+11 timing config:load:file:C:\Users\J-365\.npmrc Completed in 1ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:C:\Users\J-365\.npm-global\etc\npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 0ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 12ms
+19 timing npm:load:configload Completed in 12ms
+20 timing npm:load:setTitle Completed in 0ms
+21 timing npm:load:setupLog Completed in 0ms
+22 timing config:load:flatten Completed in 3ms
+23 timing npm:load:cleanupLog Completed in 2ms
+24 timing npm:load:configScope Completed in 0ms
+25 timing npm:load:projectScope Completed in 0ms
+26 timing npm:load Completed in 20ms
+27 timing command:run-script Completed in 11ms
+28 timing command:start Completed in 19ms
+29 verbose stack Error: Missing script: "start"
+29 verbose stack
+29 verbose stack Did you mean one of these?
+29 verbose stack     npm star # Mark your favorite packages
+29 verbose stack     npm stars # View packages marked as favorites
+29 verbose stack
+29 verbose stack To see a list of scripts, run:
+29 verbose stack   npm run
+29 verbose stack     at RunScript.run (C:\Program Files\nodejs\node_modules\npm\lib\run-script.js:105:13)
+30 verbose cwd C:\Users\J-365\anaconda3\envs\SSP_Project_Flask
+31 verbose Windows_NT 10.0.19043
+32 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+33 verbose node v16.13.0
+34 verbose npm  v8.1.0
+35 error Missing script: "start"
+35 error
+35 error Did you mean one of these?
+35 error     npm star # Mark your favorite packages
+35 error     npm stars # View packages marked as favorites
+35 error
+35 error To see a list of scripts, run:
+35 error   npm run
+36 verbose exit 1
