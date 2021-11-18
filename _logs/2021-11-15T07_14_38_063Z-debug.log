@@ -1,0 +1,46 @@
+0 verbose cli [
+0 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+0 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+0 verbose cli   'start'
+0 verbose cli ]
+1 info using npm@8.1.0
+2 info using node@v16.13.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:C:\Program Files\nodejs\node_modules\npm\npmrc Completed in 5ms
+6 timing config:load:builtin Completed in 5ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:C:\Users\J-365\anaconda3\envs\SSP_Project_Flask\.npmrc Completed in 0ms
+10 timing config:load:project Completed in 2ms
+11 timing config:load:file:C:\Users\J-365\.npmrc Completed in 1ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:C:\Users\J-365\.npm-global\etc\npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:validate Completed in 0ms
+16 timing config:load:credentials Completed in 1ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 14ms
+19 timing npm:load:configload Completed in 15ms
+20 timing npm:load:setTitle Completed in 0ms
+21 timing npm:load:setupLog Completed in 0ms
+22 timing config:load:flatten Completed in 2ms
+23 timing npm:load:cleanupLog Completed in 2ms
+24 timing npm:load:configScope Completed in 0ms
+25 timing npm:load:projectScope Completed in 1ms
+26 timing npm:load Completed in 23ms
+27 timing command:run-script Completed in 1ms
+28 timing command:start Completed in 12ms
+29 verbose stack Error: ENOENT: no such file or directory, open 'C:\Users\J-365\anaconda3\envs\SSP_Project_Flask\package.json'
+30 verbose cwd C:\Users\J-365\anaconda3\envs\SSP_Project_Flask
+31 verbose Windows_NT 10.0.19043
+32 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+33 verbose node v16.13.0
+34 verbose npm  v8.1.0
+35 error code ENOENT
+36 error syscall open
+37 error path C:\Users\J-365\anaconda3\envs\SSP_Project_Flask/package.json
+38 error errno -4058
+39 error enoent ENOENT: no such file or directory, open 'C:\Users\J-365\anaconda3\envs\SSP_Project_Flask\package.json'
+40 error enoent This is related to npm not being able to find a file.
+41 verbose exit -4058

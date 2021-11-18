@@ -1,5 +1,3 @@
-# neo4j start 와 open
-# 파이참의 재생 누르면 실행 가능
 from flask import Flask
 from neo4j import GraphDatabase
 # import json
