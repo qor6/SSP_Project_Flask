@@ -1,0 +1,121 @@
+0 verbose cli [
+0 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+0 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+0 verbose cli   'install',
+0 verbose cli   'react-router-domnpm',
+0 verbose cli   'install',
+0 verbose cli   'react-router-dom'
+0 verbose cli ]
+1 info using npm@8.1.0
+2 info using node@v16.13.0
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:C:\Program Files\nodejs\node_modules\npm\npmrc Completed in 5ms
+6 timing config:load:builtin Completed in 5ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:C:\Users\J-365\anaconda3\envs\SSP_Project_Flask\.npmrc Completed in 1ms
+10 timing config:load:project Completed in 3ms
+11 timing config:load:file:C:\Users\J-365\.npmrc Completed in 1ms
+12 timing config:load:user Completed in 2ms
+13 timing config:load:file:C:\Users\J-365\.npm-global\etc\npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 1ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 16ms
+19 timing npm:load:configload Completed in 17ms
+20 timing npm:load:setTitle Completed in 0ms
+21 timing npm:load:setupLog Completed in 1ms
+22 timing config:load:flatten Completed in 3ms
+23 timing npm:load:cleanupLog Completed in 2ms
+24 timing npm:load:configScope Completed in 0ms
+25 timing npm:load:projectScope Completed in 1ms
+26 timing npm:load Completed in 25ms
+27 timing arborist:ctor Completed in 1ms
+28 timing arborist:ctor Completed in 0ms
+29 timing idealTree:init Completed in 15ms
+30 timing idealTree:userRequests Completed in 4ms
+31 silly idealTree buildDeps
+32 silly fetch manifest react-router-domnpm@*
+33 http fetch GET 404 https://registry.npmjs.org/react-router-domnpm 863ms (cache skip)
+34 http fetch GET 404 https://registry.npmjs.org/react-router-domnpm 740ms (cache skip)
+35 silly fetch manifest install@*
+36 http fetch GET 200 https://registry.npmjs.org/install 74ms (cache miss)
+37 silly fetch manifest react-router-dom@*
+38 http fetch GET 200 https://registry.npmjs.org/react-router-dom 61ms (cache revalidated)
+39 silly fetch manifest react@>=16.8
+40 http fetch GET 200 https://registry.npmjs.org/react 74ms (cache revalidated)
+41 silly fetch manifest react-dom@>=16.8
+42 http fetch GET 200 https://registry.npmjs.org/react-dom 67ms (cache revalidated)
+43 silly placeDep ROOT install@0.13.0 OK for:  want: *
+44 silly placeDep ROOT react-router-dom@6.0.2 OK for:  want: *
+45 silly placeDep ROOT react@17.0.2 OK for: react-router-dom@6.0.2 want: >=16.8
+46 silly placeDep ROOT react-dom@17.0.2 OK for: react-router-dom@6.0.2 want: >=16.8
+47 silly placeDep ROOT react-router-domnpm@ OK for:  want: *
+48 silly fetch manifest react-router@6.0.2
+49 silly fetch manifest history@^5.1.0
+50 silly fetch manifest loose-envify@^1.1.0
+51 silly fetch manifest object-assign@^4.1.1
+52 silly fetch manifest scheduler@^0.20.2
+53 http fetch GET 200 https://registry.npmjs.org/history 59ms (cache revalidated)
+54 http fetch GET 200 https://registry.npmjs.org/loose-envify 86ms (cache revalidated)
+55 http fetch GET 200 https://registry.npmjs.org/react-router 89ms (cache revalidated)
+56 http fetch GET 200 https://registry.npmjs.org/object-assign 108ms (cache revalidated)
+57 http fetch GET 200 https://registry.npmjs.org/scheduler 114ms (cache revalidated)
+58 timing idealTree:#root Completed in 2045ms
+59 timing idealTree:node_modules/install Completed in 0ms
+60 silly placeDep ROOT loose-envify@1.4.0 OK for: react@17.0.2 want: ^1.1.0
+61 silly placeDep ROOT object-assign@4.1.1 OK for: react@17.0.2 want: ^4.1.1
+62 silly fetch manifest js-tokens@^3.0.0 || ^4.0.0
+63 http fetch GET 200 https://registry.npmjs.org/js-tokens 65ms (cache revalidated)
+64 timing idealTree:node_modules/react Completed in 74ms
+65 silly placeDep ROOT js-tokens@4.0.0 OK for: loose-envify@1.4.0 want: ^3.0.0 || ^4.0.0
+66 timing idealTree:node_modules/loose-envify Completed in 3ms
+67 timing idealTree:node_modules/js-tokens Completed in 0ms
+68 timing idealTree:node_modules/object-assign Completed in 0ms
+69 silly placeDep ROOT scheduler@0.20.2 OK for: react-dom@17.0.2 want: ^0.20.2
+70 timing idealTree:node_modules/react-dom Completed in 5ms
+71 silly placeDep ROOT history@5.1.0 OK for: react-router-dom@6.0.2 want: ^5.1.0
+72 silly placeDep ROOT react-router@6.0.2 OK for: react-router-dom@6.0.2 want: 6.0.2
+73 silly fetch manifest @babel/runtime@^7.7.6
+74 http fetch GET 200 https://registry.npmjs.org/@babel%2fruntime 92ms (cache revalidated)
+75 timing idealTree:node_modules/react-router-dom Completed in 101ms
+76 silly placeDep ROOT @babel/runtime@7.16.3 OK for: history@5.1.0 want: ^7.7.6
+77 silly fetch manifest regenerator-runtime@^0.13.4
+78 http fetch GET 200 https://registry.npmjs.org/regenerator-runtime 57ms (cache revalidated)
+79 timing idealTree:node_modules/history Completed in 61ms
+80 silly placeDep ROOT regenerator-runtime@0.13.9 OK for: @babel/runtime@7.16.3 want: ^0.13.4
+81 timing idealTree:node_modules/@babel/runtime Completed in 1ms
+82 timing idealTree:node_modules/react-router Completed in 0ms
+83 timing idealTree:node_modules/react-router-domnpm Completed in 0ms
+84 timing idealTree:node_modules/regenerator-runtime Completed in 0ms
+85 timing idealTree:node_modules/scheduler Completed in 0ms
+86 timing idealTree:buildDeps Completed in 2294ms
+87 timing idealTree:fixDepFlags Completed in 1ms
+88 timing idealTree Completed in 2315ms
+89 timing command:install Completed in 2336ms
+90 verbose stack HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.org/react-router-domnpm - Not found
+90 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-fetch\check-response.js:95:15
+90 verbose stack     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+90 verbose stack     at async Arborist.[nodeFromEdge] (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1061:19)
+90 verbose stack     at async Arborist.[buildDepStep] (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:930:11)
+90 verbose stack     at async Arborist.buildIdealTree (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:216:7)
+90 verbose stack     at async Promise.all (index 1)
+90 verbose stack     at async Arborist.reify (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:149:5)
+90 verbose stack     at async Install.install (C:\Program Files\nodejs\node_modules\npm\lib\install.js:170:5)
+91 verbose statusCode 404
+92 verbose pkgid react-router-domnpm@*
+93 verbose cwd C:\Users\J-365\anaconda3\envs\SSP_Project_Flask
+94 verbose Windows_NT 10.0.19043
+95 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "react-router-domnpm" "install" "react-router-dom"
+96 verbose node v16.13.0
+97 verbose npm  v8.1.0
+98 error code E404
+99 error 404 Not Found - GET https://registry.npmjs.org/react-router-domnpm - Not found
+100 error 404
+101 error 404 'react-router-domnpm@*' is not in this registry.
+102 error 404 You should bug the author to publish it (or use the name yourself!)
+103 error 404 Note that you can also install from a
+104 error 404 tarball, folder, http url, or git url.
+105 verbose exit 1
