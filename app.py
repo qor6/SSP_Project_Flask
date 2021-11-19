@@ -9,25 +9,6 @@ class connectDBMS :
     def __init__(self, url, user, password) :
         self.driver = GraphDatabase.driver(url, auth=(user, password))
 
-    def sign_users(self): # 회원가입 관련
-        with self.driver.session() as session:
-            greeting = session.write_transaction(self.SIGNUP_USERS_INFORMATION)
-            return greeting
-    @staticmethod # (u:user:username)
-    def SIGNUP_USERS_INFORMATION(tx):
-        a = tx.run("CREATE (n:user{name : $username, id : $user_id, pw : $user_password, nickname:$nickname})",
-                   username = "", user_id ="", user_password = "", nickname = "")
-        return 'add user information success'
-
-    def login_users(self): # 로그인 관련
-        with self.driver.session() as session:
-            greeting = session.write_transaction(self.LOGIN_USERS_INFORMATION)
-            return greeting
-    @staticmethod
-    def LOGIN_USERS_INFORMATION(tx):
-        c = tx.run("MATCH (n:user{name : $username, id : $user_id, pw : $user_password})"
-                   "RETURN n.id as id, n.pw as pw", user_id ="", user_password = "")
-        return 'Login success'
 
     def delete_users(self): # 모든 유저 관련 정보 삭제
         with self.driver.session() as session:

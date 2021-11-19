@@ -1,41 +1,31 @@
-import React from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
-//<!--기본 페이지(/)를 로그인 페이지로 지정하는 코드-->
-import Login from "./Components/login";
-import SignUp from "./Components/signup";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Login from './Login';
+import SignUp from './SignUp';
 
-function App() {
-  return (
-    <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-        <div className="container">
-          <Link className="navbar-brand" to={"/sign-in"}>positronX.io</Link>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>Login</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
-              </li>
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <div>
+                <Link to="C:\Users\mom42\PycharmProjects\SSP_Project_React/src/Login.js">Login</Link>
+              </div>
+              <div>
+                <Link to="C:\Users\mom42\PycharmProjects\SSP_Project_React/src/SignUp.js">SignUp</Link>
+              </div>
             </ul>
-          </div>
-        </div>
-      </nav>
-
-      <div className="auth-wrapper">
-        <div className="auth-inner">
+          </nav>
           <Routes>
-            <Route exact path='/' component={Login} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
+            <Route path='C:\Users\mom42\PycharmProjects\SSP_Project_React/src/Login.js' component={Login}/>
+            <Route path='C:\Users\mom42\PycharmProjects\SSP_Project_React/src/SignUp.js' component={SignUp}/>
           </Routes>
         </div>
-      </div>
-    </div>
-  );
+      </Router>
+    );
+  }
 }
 
 export default App;
