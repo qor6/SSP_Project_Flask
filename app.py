@@ -37,8 +37,8 @@ class connectDBMS :
 
     @staticmethod
     def DELETE_USERS_INFORMATION(tx):
-        z = tx.run("MATCH (u:user)"
-                   "DELETE u")
+        z = tx.run("MATCH (n:user)"
+                   "DELETE n")
         return 'delete all user information success'
 
 greeter = connectDBMS('bolt://localhost:7687','neo4j', '0224')
