@@ -14,12 +14,7 @@ class Login extends Component {
            <input type="submit" value="로그인"/>
 			<br></br>
            <input type="submit" value={"회원가입"}/>
-
         </form>
-
-
-
-
       </div>
       );
    }
