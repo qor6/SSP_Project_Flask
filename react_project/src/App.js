@@ -11,7 +11,7 @@ class App extends Component {
           <nav>
             <ul>
               <div>
-                <Link to="/">Login</Link>
+                <Link to="./signUp/Login.js">Login</Link>
               </div>
               <div>
                 <Link to="./SignUp.js">SignUp</Link>
@@ -19,8 +19,8 @@ class App extends Component {
             </ul>
           </nav>
           <Routes>
-            <Route path='./Login' component={Login}/>
-            <Route path='./SignUp.js' component={SignUp}/>
+            <Route path='/' component={Login}/>
+            <Route path='./SignUp' component={SignUp}/>
           </Routes>
         </div>
       </Router>
