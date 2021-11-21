@@ -1,9 +1,6 @@
 document.getElementById("btnAdd").addEventListener("click",addList);
 // html에서 id가 btnAdd인 요소를 찾고 클릭 시 동작할 addList 함수 연결
 
-document.getElementById("btnDelLast").addEventListener("click",delLastElement);
-// html에서 id가 btnDelLast인 요소를 찾고 클릭 시 동작할 addList 함수 연결
-
 function addList() {
     var contents = document.querySelector(".text-basic");
     // 입력창에 접근
@@ -46,21 +43,17 @@ function addList() {
     contents.value=""; // 입력창의 내용이 추가되었으므로 입력창 지우기
 
     contents.focus(); // 입력창 포커스 (활성화)
+
+    // 지우기 버튼
+    const button = document.createElement("button");
+    button.innerText="×";
+    button.addEventListener("click", deleteToDo);
+    tr.appendChild(button);
+
 }
 
-// 마지막 항목 삭제
-function delLastElement() {
-    var list = document.getElementById("listBody"); // listBody에 접근
-
-    var listChild = list.children;
-
-    if (listChild.length > 0) {
-        var lastIdx=listChild.length - 1; // listBody의 자식요소 정보가 들어옴
-
-        list.removeChild(listChild[lastIdx]);
-    }
-    else {
-        alert("삭제할 항목이 없습니다.");
-    }
-
+// 삭제 함수
+function deleteToDo(value) {
+  const tr=value.target.parentElement;
+  tr.remove();
 }
