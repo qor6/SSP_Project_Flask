@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Login from './signUp/Login';
 import SignUp from './signUp/SignUp';
-
+  /* <div>
+                <Link to="./signUp/Login.js">Login</Link>
+              </div>
+              <div>
+                <Link to="./SignUp.js">SignUp</Link>
+              </div>*/
 class App extends Component {
   render() {
     return (
@@ -10,12 +15,6 @@ class App extends Component {
         <div>
           <nav>
             <ul>
-              <div>
-                <Link to="./signUp/Login.js">Login</Link>
-              </div>
-              <div>
-                <Link to="./SignUp.js">SignUp</Link>
-              </div>
             </ul>
           </nav>
           <Routes>
