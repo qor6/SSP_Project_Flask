@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Login from './Login';
-import SignUp from './SignUp';
+import Login from './signUp/Login';
+import SignUp from './signUp/SignUp';
 
 class App extends Component {
   render() {
@@ -11,16 +11,16 @@ class App extends Component {
           <nav>
             <ul>
               <div>
-                <Link to="C:\Users\mom42\PycharmProjects\SSP_Project_React/src/Login.js">Login</Link>
+                <Link to="/">Login</Link>
               </div>
               <div>
-                <Link to="C:\Users\mom42\PycharmProjects\SSP_Project_React/src/SignUp.js">SignUp</Link>
+                <Link to="./SignUp.js">SignUp</Link>
               </div>
             </ul>
           </nav>
           <Routes>
-            <Route path='C:\Users\mom42\PycharmProjects\SSP_Project_React/src/Login.js' component={Login}/>
-            <Route path='C:\Users\mom42\PycharmProjects\SSP_Project_React/src/SignUp.js' component={SignUp}/>
+            <Route path='./Login' component={Login}/>
+            <Route path='./SignUp.js' component={SignUp}/>
           </Routes>
         </div>
       </Router>
