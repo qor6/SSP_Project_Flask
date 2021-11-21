@@ -5,7 +5,7 @@ from neo4j import GraphDatabase
 
 app = Flask(__name__)
 
-class connectDBMS :
+class ConnectDBMS :
     def __init__(self, url, user, password) :
         self.driver = GraphDatabase.driver(url, auth=(user, password))
 
@@ -72,7 +72,7 @@ class connectDBMS :
                    "DELETE n")
         return 'delete all user information success'
 
-greeter = connectDBMS('bolt://localhost:7687','neo4j', '0224')
+greeter = connectDBMS('bolt://localhost:7687','neo4j','0224')
 
 @app.route('/') # 기본페이지
 def home():  # put application's code here

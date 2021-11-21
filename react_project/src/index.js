@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Apxp';
 import reportWebVitals from './etc/reportWebVitals';
 import Login from './signUp/Login';
 import SignUp from './signUp/SignUp';
