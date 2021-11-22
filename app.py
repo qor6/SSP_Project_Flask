@@ -30,7 +30,7 @@ class connectDBMS :
             greeting = session.write_transaction(self.TODOLIST)
             return greeting
 
-    def todolist_con(self):  # To do 관련
+    def todolist_con(self):  # To do 연결 관련
         with self.driver.session() as session:
             greeting = session.write_transaction(self.TODOLIST_CON)
             return greeting
@@ -82,13 +82,13 @@ class connectDBMS :
 
     @staticmethod  # (u:user:username)
     def D_DAY_USERS(tx):
-        f = tx.run("CREATE (d:d_day")
+        f = tx.run("CREATE (d:d_day)")
         return 'd_day success'
 
     @staticmethod  # (u:user:username)
     def MOTTO_USERS(tx):
         g = tx.run("CREATE (m:motto{contents : $contents})",
-               motto="")
+               contents="")
         return 'create motto'
 
     def delete_users(self): # 모든 유저 관련 정보 삭제
@@ -134,12 +134,12 @@ def todolistcon():
     e = greeter.todolist_con()
     return e
 
-@app.route('/d_day_users') # d-day 연결 페이지 #수정 필요
+@app.route('/d_day_users') # d-day 페이지
 def d_day_users():
     f = greeter.d_day_users()
     return f
 
-@app.route('/motto_users') # motto 연결 페이지 #수정 필요
+@app.route('/motto_users') # motto 페이지
 def motto_users():
     g = greeter.motto_users()
     return g
