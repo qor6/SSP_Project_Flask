@@ -14,7 +14,6 @@ class connectDBMS :
             greeting = session.write_transaction(self.SIGNUP_USERS_INFORMATION)
             return greeting
 
-
     def login_users(self): # 로그인 관련
         with self.driver.session() as session:
             greeting = session.write_transaction(self.LOGIN_USERS_INFORMATION)
@@ -49,7 +48,7 @@ class connectDBMS :
     def SIGNUP_USERS_INFORMATION(tx):
         a = tx.run("CREATE (n:user{name : $username, id : $user_id, pw : $user_password, nickname:$nickname})",
                username="", user_id="", user_password="", nickname="")
-        return 'singup: add user information success'
+        return 'siggup: add user information success'
 
     @staticmethod
     def LOGIN_USERS_INFORMATION(tx):
@@ -73,10 +72,9 @@ class connectDBMS :
         return 'create todolist'
 
     @staticmethod
-    def TODOLIST_CON(tx):
-        e = tx.run("MATCH (list:list, date:date)"
-                   "WHERE list.date = date"
-                   "CREATE (list:list) -[:include] -> (data:date)"                                   
+    def TODOLIST_CON(tx): #새로운 노드와 관계가 생성 됨.....
+        e = tx.run("MATCH(list) -- (date)"
+                   "CREATE (list) -[:include] -> (date)"                                   
                    "RETURN list, date")
         return 'connect todolist and date'
 
@@ -118,7 +116,7 @@ def user_login():
     b = greeter.login_users()
     return b
 
-@app.route('/calender') #  캘린더 페이지 #수정 필요
+@app.route('/calendar') #  캘린더 페이지 #수정 필요
 def calendar():
     date = request.get_json()  # json 데이터를 받아옴
     c = greeter.calendar(date)
