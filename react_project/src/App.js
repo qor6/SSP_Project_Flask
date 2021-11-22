@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Login from './signUp/Login';
-import SignUp from './signUp/SignUp';
+import Login from './Login_Signup/Login';
+import SignUp from './Login_Signup/SignUp';
   /* <div>
-                <Link to="./signUp/Login.js">Login</Link>
+                <Link to="./Login_Signup/Login.js">Login</Link>
               </div>
               <div>
                 <Link to="./SignUp.js">SignUp</Link>
