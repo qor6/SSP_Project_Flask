@@ -5,7 +5,7 @@ from neo4j import GraphDatabase
 
 app = Flask(__name__)
 
-class ConnectDBMS :
+class connectDBMS :
     def __init__(self, url, user, password) :
         self.driver = GraphDatabase.driver(url, auth=(user, password))
 
@@ -20,15 +20,9 @@ class ConnectDBMS :
             greeting = session.write_transaction(self.LOGIN_USERS_INFORMATION)
             return greeting
 
-    @staticmethod
-    def LOGIN_USERS_INFORMATION(tx):
-        b = tx.run("MATCH (n:user)"
-                   "RETURN n")
-
-
-    def calendar(self):  # 캘린더 관련
+    def calendar(self, date):  # 캘린더 관련
         with self.driver.session() as session:
-            greeting = session.write_transaction(self.CALENDAR)
+            greeting = session.write_transaction(self.CALENDAR,date)
             return greeting
 
     def todolist(self):  # To do 관련
@@ -36,30 +30,66 @@ class ConnectDBMS :
             greeting = session.write_transaction(self.TODOLIST)
             return greeting
 
+    def todolist_con(self):  # To do 연결 관련
+        with self.driver.session() as session:
+            greeting = session.write_transaction(self.TODOLIST_CON)
+            return greeting
+
+    def d_day_users(self): # D-day 관련
+        with self.driver.session() as session:
+            greeting = session.write_transaction(self.D_DAY_USERS)
+            return greeting
+
+    def motto_users(self): # 좌우명 관련
+        with self.driver.session() as session:
+            greeting = session.write_transaction(self.MOTTO_USERS)
+            return greeting
+
     @staticmethod  # (u:user:username)
     def SIGNUP_USERS_INFORMATION(tx):
         a = tx.run("CREATE (n:user{name : $username, id : $user_id, pw : $user_password, nickname:$nickname})",
                username="", user_id="", user_password="", nickname="")
-        return 'add user information success'
+        return 'singup: add user information success'
+
+    @staticmethod
+    def LOGIN_USERS_INFORMATION(tx):
+        b = tx.run("MATCH (n:user)"
+                   "RETURN n")
+        return 'login success'
 
     @staticmethod
     def CALENDAR(tx, date):
         year = date[0:2]
         month = date[2:4]
         day = date[4:6]
-        c = tx.run("CREATE (d:date {year = $year, month = $month, day = $day)",
+        c = tx.run("CREATE (d:date {year = $year, month = $month, day = $day})",
                    year="", month="", day="")
         return 'create calendar date'
 
     @staticmethod
     def TODOLIST(tx):
-        d = tx.run("CREATE (l:list {text: $text, date: $ date)",
+        d = tx.run("CREATE (l:list {text: $text, date: $ date})",
                    text="", date="")
+        return 'create todolist'
+
+    @staticmethod
+    def TODOLIST_CON(tx):
         e = tx.run("MATCH (list:list, date:date)"
                    "WHERE list.date = date"
                    "CREATE (list:list) -[:include] -> (data:date)"                                   
                    "RETURN list, date")
-        return 'create todolist'
+        return 'connect todolist and date'
+
+    @staticmethod  # (u:user:username)
+    def D_DAY_USERS(tx):
+        f = tx.run("CREATE (d:d_day)")
+        return 'd_day success'
+
+    @staticmethod  # (u:user:username)
+    def MOTTO_USERS(tx):
+        g = tx.run("CREATE (m:motto{contents : $contents})",
+               contents="")
+        return 'create motto'
 
     def delete_users(self): # 모든 유저 관련 정보 삭제
         with self.driver.session() as session:
@@ -72,7 +102,7 @@ class ConnectDBMS :
                    "DELETE n")
         return 'delete all user information success'
 
-greeter = ConnectDBMS('bolt://localhost:7687','neo4j','0224')
+greeter = connectDBMS('bolt://localhost:7687','neo4j','0224')
 
 @app.route('/') # 기본페이지
 def home():  # put application's code here
@@ -88,16 +118,32 @@ def user_login():
     b = greeter.login_users()
     return b
 
-@app.route('/calender') # 로그인 페이지
+@app.route('/calender') #  캘린더 페이지 #수정 필요
 def calendar():
     date = request.get_json()  # json 데이터를 받아옴
-    c = greeter.calender(date)
-    return c
+    c = greeter.calendar(date)
+    return  c
 
-@app.route('/todolist') # 로그인 페이지
+@app.route('/todolist') # todolist 페이지
 def todolist():
-    d = greeter.todolist
+    d = greeter.todolist()
     return d
+
+@app.route('/todolist_con') # todolist 연결 페이지 #수정 필요
+def todolistcon():
+    e = greeter.todolist_con()
+    return e
+
+@app.route('/d_day_users') # d-day 페이지
+def d_day_users():
+    f = greeter.d_day_users()
+    return f
+
+@app.route('/motto_users') # motto 페이지
+def motto_users():
+    g = greeter.motto_users()
+    return g
+
 """
 @app.route('/userLogin', methods=['POST'])
 def userLogin():
