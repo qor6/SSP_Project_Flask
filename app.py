@@ -102,7 +102,7 @@ class connectDBMS :
                    "DELETE n")
         return 'delete all user information success'
 
-greeter = connectDBMS('bolt://localhost:7687','neo4j','0224')
+greeter = ConnectDBMS('bolt://localhost:7687','neo4j','0224')
 
 @app.route('/') # 기본페이지
 def home():  # put application's code here

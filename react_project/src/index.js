@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './Apxp';
+import App from './App';
 import reportWebVitals from './etc/reportWebVitals';
-export { default as Login } from './signUp/Login';
-export { default as SignUp } from './signUp/SignUp';
+import Login from './signUp/Login';
 
 // eslint-disable-next-line
 let element = ReactDOM.render(
   <React.StrictMode>
       <App />
+      <Login/>
   </React.StrictMode>,
    document.getElementById('root')
 );
