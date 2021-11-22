@@ -35,6 +35,16 @@ class connectDBMS :
             greeting = session.write_transaction(self.TODOLIST_CON)
             return greeting
 
+    def d_day_users(self): # D-day 관련
+        with self.driver.session() as session:
+            greeting = session.write_transaction(self.D_DAY_USERS)
+            return greeting
+
+    def motto_users(self): # 좌우명 관련
+        with self.driver.session() as session:
+            greeting = session.write_transaction(self.MOTTO_USERS)
+            return greeting
+
     @staticmethod  # (u:user:username)
     def SIGNUP_USERS_INFORMATION(tx):
         a = tx.run("CREATE (n:user{name : $username, id : $user_id, pw : $user_password, nickname:$nickname})",
@@ -69,6 +79,17 @@ class connectDBMS :
                    "CREATE (list:list) -[:include] -> (data:date)"                                   
                    "RETURN list, date")
         return 'connect todolist and date'
+
+    @staticmethod  # (u:user:username)
+    def D_DAY_USERS(tx):
+        f = tx.run("CREATE (d:d_day")
+        return 'd_day success'
+
+    @staticmethod  # (u:user:username)
+    def MOTTO_USERS(tx):
+        g = tx.run("CREATE (m:motto{contents : $contents})",
+               motto="")
+        return 'create motto'
 
     def delete_users(self): # 모든 유저 관련 정보 삭제
         with self.driver.session() as session:
@@ -112,6 +133,16 @@ def todolist():
 def todolistcon():
     e = greeter.todolist_con()
     return e
+
+@app.route('/d_day_users') # d-day 연결 페이지
+def d_day_users():
+    f = greeter.d_day_users()
+    return f
+
+@app.route('/motto_users') # motto 연결 페이지
+def motto_users():
+    g = greeter.motto_users()
+    return g
 
 """
 @app.route('/userLogin', methods=['POST'])
