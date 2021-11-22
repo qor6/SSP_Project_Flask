@@ -102,7 +102,7 @@ class connectDBMS :
                    "DELETE n")
         return 'delete all user information success'
 
-greeter = ConnectDBMS('bolt://localhost:7687','neo4j','0224')
+greeter = connectDBMS('bolt://localhost:7687','neo4j','0224')
 
 @app.route('/') # 기본페이지
 def home():  # put application's code here
@@ -118,7 +118,7 @@ def user_login():
     b = greeter.login_users()
     return b
 
-@app.route('/calender') #  캘린더 페이지
+@app.route('/calender') #  캘린더 페이지 #수정 필요
 def calendar():
     date = request.get_json()  # json 데이터를 받아옴
     c = greeter.calendar(date)
@@ -129,17 +129,17 @@ def todolist():
     d = greeter.todolist()
     return d
 
-@app.route('/todolist_con') # todolist 연결 페이지
+@app.route('/todolist_con') # todolist 연결 페이지 #수정 필요
 def todolistcon():
     e = greeter.todolist_con()
     return e
 
-@app.route('/d_day_users') # d-day 연결 페이지
+@app.route('/d_day_users') # d-day 연결 페이지 #수정 필요
 def d_day_users():
     f = greeter.d_day_users()
     return f
 
-@app.route('/motto_users') # motto 연결 페이지
+@app.route('/motto_users') # motto 연결 페이지 #수정 필요
 def motto_users():
     g = greeter.motto_users()
     return g
